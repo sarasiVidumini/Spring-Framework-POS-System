@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen POS - Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Styles/dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <i class="fas fa-bolt"></i>
+        <span>NextGen POS</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-item active"
+          ><i class="fas fa-th-large"></i> Dashboard</a
+        >
+        <a href="customer.html" class="nav-item"
+          ><i class="fas fa-user-group"></i> Customers</a
+        >
+        <a href="item.html" class="nav-item"
+          ><i class="fas fa-box-archive"></i> Inventory</a
+        >
+        <a href="order.html" class="nav-item"
+          ><i class="fas fa-receipt"></i> New Sale</a
+        >
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header>
+        <div class="search-bar">
+          <i class="fas fa-search" style="color: var(--secondary)"></i>
+          <span
+            style="color: var(--secondary); margin-left: 10px; font-size: 14px"
+            >Quick Search...</span
+          >
+        </div>
+        <div class="profile">
+          <span style="font-weight: 600; font-size: 14px">Thilina</span>
+          <img
+            src="https://ui-avatars.com/api/?name=Thilina&background=6366f1&color=fff"
+            style="width: 32px; height: 32px; border-radius: 50%"
+          />
+        </div>
+      </header>
+
+      <div class="container">
+        <div style="margin-bottom: 40px">
+          <h1 style="font-size: 28px; font-weight: 700">Morning, Thilina 👋</h1>
+          <p style="color: var(--secondary)">
+            Here's a summary of your business today.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="glass-card">
+            <div class="stat-info">
+              <h3>Total Sales</h3>
+              <div class="value">Rs. 142k</div>
+            </div>
+            <div class="stat-icon bg-blue">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <div class="stat-info">
+              <h3>New Customers</h3>
+              <div class="value">42</div>
+            </div>
+            <div class="stat-icon bg-emerald">
+              <i class="fas fa-user-plus"></i>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <div class="stat-info">
+              <h3>Stock Alerts</h3>
+              <div class="value">12</div>
+            </div>
+            <div class="stat-icon bg-amber">
+              <i class="fas fa-triangle-exclamation"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
