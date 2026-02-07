@@ -12,14 +12,14 @@ function openModal(type) {
     btn.text("Update Changes");
     btn.css("background", "var(--warning)");
     btn.click(function () {
-      updateCustomer();
+      // updateCustomer();
     });
   } else {
     title.innerText = "Add New Customer";
     btn.text("Save Customer");
     btn.css("background", "var(--primary)");
     btn.click(function () {
-      // saveCustomer();
+      saveCustomer();
     });
   }
 }
@@ -27,50 +27,49 @@ function openModal(type) {
 function closeModal() {
   document.getElementById("modalOverlay").style.display = "none";
 }
-//   window.onload = function () {
-//     getAllCustomers();
-//   };
-//   const BASE_URL =
-//     "http://localhost:8080/Backend_pos_monorepo_war_exploded/api/v1/customers";
+window.onload = function () {
+  // getAllCustomers();
+};
+const BASE_URL = "http://localhost:8080/api/v1/customer";
 
-//   $("#actionBtn").click(function () {
-//     saveCustomer();
-//   });
+$("#actionBtn").click(function () {
+  saveCustomer();
+});
 
 /* ================== SAVE CUSTOMER ==================*/
-//   function saveCustomer() {
-//     const cid = $("#customer_id").val();
-//     const cname = $("#customer_name").val();
-//     const caddress = $("#customer_address").val();
+function saveCustomer() {
+  const cid = $("#customer_id").val();
+  const cname = $("#customer_name").val();
+  const caddress = $("#customer_address").val();
 
-//     $.ajax({
-//       url: BASE_URL,
-//       method: "POST",
-//       contentType: "application/json",
-//       data: JSON.stringify({
-//         cid: cid,
-//         cname: cname,
-//         caddress: caddress,
-//       }),
-//       success: function (response) {
-//         alert("Successfully Saved");
-//         closeModal();
-//         clearInputFealds();
-//         console.log(response);
-//         getAllCustomers();
-//       },
-//       error: function (error) {
-//         console.log(error);
-//       },
-//     });
-//   }
+  $.ajax({
+    url: BASE_URL,
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      cId: cid,
+      cName: cname,
+      cAddress: caddress,
+    }),
+    success: function (response) {
+      alert("Successfully Saved");
+      closeModal();
+      clearInputFealds();
+      console.log(response);
+      // getAllCustomers();
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+}
 
 /* ================== CLEAR FIELDS ==================*/
-//   function clearInputFealds() {
-//     $("#customer_id").val("");
-//     $("#customer_name").val("");
-//     $("#customer_address").val("");
-//   }
+function clearInputFealds() {
+  $("#customer_id").val("");
+  $("#customer_name").val("");
+  $("#customer_address").val("");
+}
 
 /* ================== GET ALL CUSTOMER ==================*/
 //   function getAllCustomers() {
