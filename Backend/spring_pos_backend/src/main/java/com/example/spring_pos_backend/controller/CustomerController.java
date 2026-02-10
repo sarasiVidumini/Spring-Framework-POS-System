@@ -5,10 +5,7 @@ import com.example.spring_pos_backend.entity.Customer;
 import com.example.spring_pos_backend.repository.CustomerRepo;
 import com.example.spring_pos_backend.service.impl.CustomerServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/customer")
@@ -19,5 +16,10 @@ public class CustomerController {
     @PostMapping
     public void saveCustomer(@RequestBody CustomerDTO customerDTO) {
         customerServiceImpl.saveCustomer(customerDTO);
+    }
+
+    @PutMapping
+    public void updateCustomer(@RequestBody CustomerDTO customerDTO){
+        customerServiceImpl.updateCustomer(customerDTO);
     }
 }

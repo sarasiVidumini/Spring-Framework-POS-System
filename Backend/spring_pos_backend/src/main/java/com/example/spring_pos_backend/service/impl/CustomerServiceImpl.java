@@ -22,7 +22,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(CustomerDTO customerDTO) {
-
+        customerRepo.save(new Customer(
+                customerDTO.getCId(),
+                customerDTO.getCName(),
+                customerDTO.getCAddress()
+        ));
     }
 
     @Override
