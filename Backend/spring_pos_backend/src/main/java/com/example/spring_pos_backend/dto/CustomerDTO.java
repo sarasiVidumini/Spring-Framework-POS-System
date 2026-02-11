@@ -1,12 +1,12 @@
 package com.example.spring_pos_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 
 public class CustomerDTO {
     private String cId;
