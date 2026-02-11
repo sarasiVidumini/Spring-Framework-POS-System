@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class item {
+public class Item {
     @Id
     private String code;
     private String description;
