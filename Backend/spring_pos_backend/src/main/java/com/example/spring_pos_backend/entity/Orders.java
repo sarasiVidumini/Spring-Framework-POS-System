@@ -17,6 +17,8 @@ public class Orders {
 
     private LocalDate date;
 
+    private String customerId;
+
     @ManyToOne
     private Customer customer;   // column name auto = customer_cid
 
