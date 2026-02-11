@@ -17,8 +17,8 @@ public class OrderDetail {
     private double unitPrice;
 
     @ManyToOne
-    private Orders orders;   // auto column = orders_orderId
+    private Orders orders;
 
     @ManyToOne
-    private Item item;       // auto column = item_code
+    private Item item;
 }

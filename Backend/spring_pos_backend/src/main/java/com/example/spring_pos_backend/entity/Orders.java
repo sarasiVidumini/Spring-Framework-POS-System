@@ -1,7 +1,11 @@
 package com.example.spring_pos_backend.entity;
 
+import com.example.spring_pos_backend.entity.Customer;
+import com.example.spring_pos_backend.entity.OrderDetail;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class Orders {
 
     @Id
@@ -17,11 +22,9 @@ public class Orders {
 
     private LocalDate date;
 
-    private String customerId;
-
     @ManyToOne
-    private Customer customer;   // column name auto = customer_cid
+    private Customer customer;
 
-    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderDetail> orderDetails;
 }

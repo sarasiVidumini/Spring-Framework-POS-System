@@ -36,6 +36,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public void deleteItem(String code) {
+        System.out.println(code);
         itemRepo.deleteById(code);
     }
 
