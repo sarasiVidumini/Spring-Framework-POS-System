@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen POS - New Sale</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Styles/order.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <i class="fas fa-bolt"></i><span>NextGen POS</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="/Pages/index.html" class="nav-item"
+          ><i class="fas fa-th-large"></i> Dashboard</a
+        >
+        <a href="/Pages/customer.html" class="nav-item"
+          ><i class="fas fa-user-group"></i> Customers</a
+        >
+        <a href="/Pages/item.html" class="nav-item"
+          ><i class="fas fa-box-archive"></i> Inventory</a
+        >
+        <a href="order.html" class="nav-item active"
+          ><i class="fas fa-receipt"></i> New Sale</a
+        >
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header>
+        <div
+          class="breadcrumb"
+          style="color: var(--secondary); font-size: 14px"
+        >
+          Sales / New Order
+        </div>
+        <div style="font-weight: 600; font-size: 14px">
+          Order ID:
+          <span id="orderIdDisplay" style="color: var(--primary)"
+            >#ORD-000</span
+          >
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="order-grid">
+          <div class="glass-card">
+            <h3><i class="fas fa-user"></i> Customer Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Select Customer</label>
+                <select id="selectCustomer">
+                  <option value="">Select Customer</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" id="custName" readonly />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" id="orderDate" />
+              </div>
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" id="custAddress" readonly />
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3><i class="fas fa-box"></i> Select Items</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Select Item</label>
+                <select id="selectItem">
+                  <option value="">Select Item</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Item Description</label>
+                <input type="text" id="itemDesc" readonly />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Price</label>
+                <input type="text" id="itemPrice" readonly />
+              </div>
+              <div class="form-group">
+                <label>Qty. On Hand</label>
+                <input
+                  type="text"
+                  id="qtyOnHand"
+                  readonly
+                  style="font-weight: 700"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label style="color: var(--primary)">Order Quantity</label>
+                <input type="number" id="orderQty" placeholder="0" />
+              </div>
+              <div
+                class="form-group"
+                style="display: flex; align-items: flex-end"
+              >
+                <button class="btn btn-add">
+                  <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-grid" style="grid-template-columns: 2fr 1fr">
+          <div class="glass-card order-table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item Code</th>
+                  <th>Description</th>
+                  <th>Unit Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="orderTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="summary-card">
+            <span class="total-label">Grand Total</span>
+            <span class="total-value" id="grandTotal">Rs. 0.00</span>
+            <div style="width: 100%; margin-top: 15px">
+              <label style="font-size: 12px; opacity: 0.6">Discount (%)</label>
+              <input
+                type="number"
+                id="discount"
+                value="0"
+                style="
+                  width: 100%;
+                  background: #2d3748;
+                  border: none;
+                  color: white;
+                  padding: 10px;
+                  border-radius: 8px;
+                  margin-top: 5px;
+                "
+              />
+            </div>
+            <button class="btn btn-place-order">
+              Complete Order <i class="fas fa-check-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/Script/order.js"></script>
+  </body>
+</html>
