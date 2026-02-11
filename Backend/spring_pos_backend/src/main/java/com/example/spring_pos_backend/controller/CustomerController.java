@@ -30,4 +30,10 @@ public class CustomerController {
     public List<CustomerDTO> getAllCustomer(){
         return customerServiceImpl.getAllCustomer();
     }
+
+    @DeleteMapping("/{cId}")
+    public void deleteCustomer(String customerId){
+        customerServiceImpl.deleteCustomer(customerId);
+    }
+
 }
