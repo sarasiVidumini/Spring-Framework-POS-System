@@ -7,9 +7,12 @@ import com.example.spring_pos_backend.service.impl.CustomerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/customer")
 @RequiredArgsConstructor
+@CrossOrigin
 public class CustomerController {
     private final CustomerServiceImpl customerServiceImpl;
 
@@ -21,5 +24,10 @@ public class CustomerController {
     @PutMapping
     public void updateCustomer(@RequestBody CustomerDTO customerDTO){
         customerServiceImpl.updateCustomer(customerDTO);
+    }
+
+    @GetMapping
+    public List<CustomerDTO> getAllCustomer(){
+        return customerServiceImpl.getAllCustomer();
     }
 }

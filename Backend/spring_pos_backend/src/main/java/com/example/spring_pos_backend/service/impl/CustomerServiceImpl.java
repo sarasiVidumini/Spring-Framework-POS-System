@@ -6,9 +6,12 @@ import com.example.spring_pos_backend.repository.CustomerRepo;
 import com.example.spring_pos_backend.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-    @Service
-    @RequiredArgsConstructor
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
         private final CustomerRepo customerRepo;
     @Override
@@ -35,7 +38,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void getAllCustomer(CustomerDTO customerDTO) {
-
+    public List<CustomerDTO> getAllCustomer() {
+        return customerRepo.findAll().stream().map(
+                customer -> new CustomerDTO(
+                        customer.getId(),
+                        customer.getName(),
+                        customer.getAddress()
+                )).toList();
     }
 }
