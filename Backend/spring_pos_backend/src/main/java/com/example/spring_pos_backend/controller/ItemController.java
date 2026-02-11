@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/item")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 
 public class ItemController {

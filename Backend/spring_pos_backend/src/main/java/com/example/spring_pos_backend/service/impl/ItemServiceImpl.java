@@ -49,6 +49,4 @@ public class ItemServiceImpl implements ItemService {
                         item.getQtyonHand()
                 )).toList();
     }
-
-  
 }
