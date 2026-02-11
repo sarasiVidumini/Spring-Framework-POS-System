@@ -31,8 +31,8 @@ public class CustomerController {
         return customerServiceImpl.getAllCustomer();
     }
 
-    @DeleteMapping("/{cId}")
-    public void deleteCustomer(String customerId){
+    @DeleteMapping("/{customerId}")
+    public void deleteCustomer(@PathVariable String customerId){
         customerServiceImpl.deleteCustomer(customerId);
     }
 
