@@ -1,128 +1,100 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextGen POS - Customers</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/Styles/customer.css" />
-  </head>
-  <body>
-    <aside class="sidebar">
-      <div class="brand">
-        <i class="fas fa-bolt"></i><span>NextGen POS</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vortex POS - Customer Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/Frontend/Styles/customer.css" />
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">
+    <i class="fas fa-rocket"></i><span>Vortex POS</span>
+  </div>
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-grip-vertical"></i> Dashboard
+    </a>
+    <a href="customer.html" class="nav-item active">
+      <i class="fas fa-users-rectangle"></i> Customers
+    </a>
+    <a href="item.html" class="nav-item">
+      <i class="fas fa-cubes"></i> Inventory
+    </a>
+    <a href="order.html" class="nav-item">
+      <i class="fas fa-wallet"></i> New Sale
+    </a>
+  </nav>
+</aside>
+
+<main class="main">
+  <header>
+    <div class="breadcrumb">
+      Directory / <strong>Customers</strong>
+    </div>
+    <div class="user-tag">Hello 👋</div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <h1>Customer Base</h1>
+        <p>Maintain and update your client records seamlessly.</p>
       </div>
-      <nav class="nav-menu">
-        <a href="/Pages/index.html" class="nav-item"
-          ><i class="fas fa-th-large"></i> Dashboard</a
-        >
-        <a href="/Pages/customer.html" class="nav-item active"
-          ><i class="fas fa-user-group"></i> Customers</a
-        >
-        <a href="/Pages/item.html" class="nav-item"
-          ><i class="fas fa-box-archive"></i> Inventory</a
-        >
-        <a href="order.html" class="nav-item"
-          ><i class="fas fa-receipt"></i> New Sale</a
-        >
-      </nav>
-    </aside>
-
-    <main class="main">
-      <header>
-        <div
-          class="breadcrumb"
-          style="color: var(--secondary); font-size: 14px"
-        >
-          Pages / Customers
-        </div>
-        <div style="font-weight: 600; font-size: 14px">Thilina 👋</div>
-      </header>
-
-      <div class="container">
-        <div class="page-header">
-          <div>
-            <h1 style="font-size: 28px; font-weight: 700">Customers</h1>
-            <p style="color: var(--secondary); margin-top: 4px">
-              Manage your customer database here.
-            </p>
-          </div>
-          <button class="btn btn-primary" onclick="openModal('add')">
-            <i class="fas fa-plus"></i> New Customer
-          </button>
-        </div>
-
-        <div class="glass-card">
-          <table>
-            <thead>
-              <tr>
-                <th>Customer ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="customerTable"></tbody>
-          </table>
-        </div>
-      </div>
-    </main>
-
-    <div class="modal-overlay" id="modalOverlay">
-      <div class="modal">
-        <div class="modal-header">
-          <h2 id="modalTitle" style="font-weight: 700">Add Customer</h2>
-          <i
-            class="fas fa-times"
-            style="cursor: pointer; color: var(--secondary)"
-            onclick="closeModal()"
-          ></i>
-        </div>
-        <div class="form-body">
-          <div class="form-group">
-            <label>Customer ID</label>
-            <input type="text" id="customer_id" placeholder="C001" />
-          </div>
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" id="customer_name" placeholder="Enter name" />
-          </div>
-          <div class="form-group">
-            <label>Address</label>
-            <input
-              type="text"
-              id="customer_address"
-              placeholder="Enter address"
-            />
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            class="btn"
-            style="background: var(--border); flex: 1"
-            onclick="closeModal()"
-          >
-            Cancel
-          </button>
-          <button id="actionBtn" class="btn btn-primary" style="flex: 2">
-            Save Customer
-          </button>
-        </div>
-      </div>
+      <button class="btn btn-primary" onclick="openModal('add')">
+        <i class="fas fa-user-plus"></i> New Customer
+      </button>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="/Script/customer.js"></script>
-  </body>
+    <div class="glass-card">
+      <div class="table-container">
+        <table>
+          <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Full Name</th>
+            <th>Location / Address</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody id="customerTable">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">Customer Registration</h2>
+      <i class="fas fa-xmark close-icon" onclick="closeModal()"></i>
+    </div>
+    <div class="form-body">
+      <div class="form-group">
+        <label>Identification Number</label>
+        <input type="text" id="customer_id" placeholder="Ex: C001" />
+      </div>
+      <div class="form-group">
+        <label>Customer Name</label>
+        <input type="text" id="customer_name" placeholder="Enter name" />
+      </div>
+      <div class="form-group">
+        <label>Residential Address</label>
+        <input type="text" id="customer_address" placeholder="Enter address" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal()">Discard</button>
+      <button id="actionBtn" class="btn btn-primary">Proceed & Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/Frontend/Script/customer.js"></script>
+</body>
 </html>
